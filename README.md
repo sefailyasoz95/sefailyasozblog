@@ -1,0 +1,1 @@
+# sefa ilyas öz blog
