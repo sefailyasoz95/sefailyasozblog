@@ -1,0 +1,53 @@
+{% extends 'homebase.html' %}
+
+{% block navbar %}
+    {% include "pages/navbar.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron text-center border-left border-right border-bottom border-danger ">
+        <h1 class="display-4"> About Me </h1>
+        <p class="lead"> {{ settings.aboutme | safe }} </p>
+        <hr>
+    </div>
+</div>
+<hr class="mb-5 mt-5">
+<div class="container">
+    <div class="jumbotron-fluid text-center jumbotron border-left border-right border-bottom border-danger">
+        <div class="container">
+            <h1 class="display-4">My Career Plan</h1>
+            <p class="lead">What do i wanna work on?</p>
+        </div>
+    </div>
+
+    <div class="card-header text-center navbar-expand p-4 mb-5 border-left border-right border-top ">
+        <div class="progress ">
+            <div class="progress-bar bg-dark pt-2 pb-1" style="width: 100%;">
+                <h5 class="display-5">
+                    Software Knowledge Progress
+                </h5>
+            </div>
+        </div>
+        <br>
+        <div class="progress">
+            <div class="progress-bar" style="width: 70%">
+                Python
+            </div>
+        </div>
+        <br>
+        <div class="progress">
+            <div class="progress-bar" style="width: 70%">
+                Django
+            </div>
+        </div>
+        <br>
+        <div class="progress">
+            <div class="progress-bar bg-success" style="width: 10%">
+                JavaScript
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

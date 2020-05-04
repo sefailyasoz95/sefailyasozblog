@@ -1,0 +1,46 @@
+{% load static %}
+</navbarr>
+			<div class="mt-5 mb-5">
+				<div class="row">
+					<div class="col-sm-8 col-md-9 m-auto text-white bg-dark">
+						<div class="card-header text-center ">
+								 <h3>SOME OF MY WORKS</h3>
+						</div>
+						{% for project in projects %}
+       					 <div class="card-columns col-md-12">
+							<div class="card bg-dark text-white">
+								<img src="{{ project.image.url }}" alt="" class="card-img-top img-fluid" style="height: 275px">
+								<div class="card-body">
+									<h4 class="card-title"><a class="text-danger" href="#"> {{ project.title }} </a> </h4>
+									<p class="card-text"> {{ project.description }}</p>
+									<small> <a href="/projects/{{ project.id }}" class="btn btn-danger"> Read More...</a> </small>
+								</div>
+							</div>
+        				 </div>
+						{% endfor %}
+      				</div>
+    			</div>
+			</div>
+
+			<div class="card-header text-center navbar-expand p-4">
+			</div>
+
+			<div class="container">
+				<div class="card text-white mt-5 border-0">
+            				<img class="card-img" src="{% static 'cardbg.jpg'%}" alt="" height="500">
+            			<div class="card-img-overlay">
+                		<h4 class="card-title">Why you should hire me ?</h4>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content
+                    		is a little bit longer.</p>
+                		<p class="card-text">
+                    		<small class="text-muted">Last updated 3 mins ago</small>
+                		</p>
+            		</div>
+        		</div>
+			</div>
+
+			<div class="card-header text-center navbar-expand p-4 mt-5">
+			</div>
+
+
+

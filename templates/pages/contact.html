@@ -1,0 +1,34 @@
+{% extends 'homebase.html' %}
+
+{% block navbar %}
+    {% include "pages/navbar.html" %}
+{% endblock %}
+
+
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron text-center border-left border-right border-top border-danger ">
+            <h5 class="display-5 text-capitalize"> Would you like to contact me ? </h5>
+            <hr>
+            <p class="lead text-capitalize">please send a message via contact form below! </p>
+            <p class="lead"> or feel free to send an email to " {{ settings.email }} " </p>
+        </div>
+    </div>
+    <div class="container mt-5 mb-5">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{message.tags}}" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <form action="" method="post">
+            <div class="form-group mt-3">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
+            <button class="btn btn-primary" type="submit"> Send </button>
+        </form>
+    </div>
+{% endblock %}

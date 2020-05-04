@@ -1,0 +1,31 @@
+{% extends 'homebase.html' %}
+
+{% block content %}
+     <div class="container">
+            <div class="jumbotron text-center">
+               <h5 class="display-4">Welcome To Blogs!</h5>
+                <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum necessitatibus perspiciatis cum vitae, modi hic?</p>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, quibusdam.</p>
+            </div>
+            <br>
+            <div class="card-columns ">
+                {% for blog in blogs %}
+                 <div class="card">
+                    <img class="card-img-top img-fluid" src="{{ blog.image.url }}" alt="" height="200">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ blog.title }}</h4>
+                        <p class="card-text">{{ blog.description }}</p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                Last updated at: {{ blog.updated_date }}
+                                <a class="btn btn-outline-primary" href="{{ blog.id }}">Read More</a>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+     </div>
+{% endblock %}

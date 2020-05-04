@@ -1,0 +1,50 @@
+<div class="card-header text-center navbar-expand">
+  <h3>LATEST BLOGS</h3>
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 m-auto">
+                <div id="slider4" class="carousel slide mt-5" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for blog in blogs %}
+                            <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
+                                <img class="img-fluid" src="{{ blog.image.url }}" alt="First Slide" style="height: 500px; width: 750px">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3>{{ blog.title }}</h3>
+                                    <p> {{ blog.description }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+          <!-- CONTROLS -->
+          <a href="#slider4" class="carousel-control-prev" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+
+          <a href="#slider4" class="carousel-control-next" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="card-header text-center navbar-expand p-4 mt-5">
+</div>
+        <script>
+      $('.carousel').carousel({
+        interval: 3000,
+        keyboard: true,
+        pause: 'hover',
+        wrap: true
+      });
+
+      $('#slider4').on('slide.bs.carousel', function () {
+        console.log('SLIDE!');
+      });
+
+      $('#slider4').on('slid.bs.carousel', function () {
+        console.log('SLID!');
+      });
+    </script>
