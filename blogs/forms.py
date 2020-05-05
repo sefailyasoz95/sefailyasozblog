@@ -13,3 +13,8 @@ class NewBlog(ModelForm):
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'blog': forms.Textarea(),
         }
+
+class ReadingCount(ModelForm):
+    class Meta:
+        model = Blog
+        fields = []

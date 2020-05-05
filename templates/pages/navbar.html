@@ -33,6 +33,15 @@
                             Contact
                         </a>
                     </li>
+                    {% if user.id is not None %}
+                        <li class="nav-item">
+                            <a href="blogs/newblog" class="nav-link ac btn btn-danger text-white">
+                                Blog Ekle
+                            </a>
+                        </li>
+                    {% else %}
+
+                    {% endif %}
                 </ul>
             </div>
         </div>

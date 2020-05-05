@@ -3,17 +3,16 @@
 {% block content %}
 <div class="container">
     <div class="jumbotron text-center border-left border-right border-bottom border-danger ">
-        <h1 class="display-4"> About Me </h1>
-        <p class="lead"> {{ settings.aboutme | safe }} </p>
-        <hr>
+        <p> {{ settings.aboutme | safe }} </p>
     </div>
 </div>
 <hr class="mb-5 mt-5">
 <div class="container">
     <div class="jumbotron-fluid text-center jumbotron border-left border-right border-bottom border-danger">
         <div class="container">
-            <h1 class="display-4">My Career Plan</h1>
-            <p class="lead">What do i wanna work on?</p>
+            <p>
+                {{ settings.career | safe }}
+            </p>
         </div>
     </div>
 

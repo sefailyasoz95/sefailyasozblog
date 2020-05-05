@@ -25,12 +25,12 @@ SECRET_KEY = 'xv_+ki3b)f6is74y_5%9@e#=i4c9)q7z667a!@h0($+q6x344g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
 INSTALLED_APPS = [
+    'user',
     'projects.apps.ProjectsConfig',
     'pages.apps.PagesConfig',
     'blogs.apps.BlogsConfig',
@@ -123,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')

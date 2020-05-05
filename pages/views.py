@@ -19,7 +19,7 @@ def index(request):
 
 def aboutme(request):
     settings = Setting.objects.get(pk=1)
-    languages = Language.objects.all()
+    languages = Language.objects.filter(status='Yayında')
     context = {'settings': settings, 'languages': languages}
     return render(request, 'pages/about.html', context)
 
