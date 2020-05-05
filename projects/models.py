@@ -34,3 +34,20 @@ class Project(models.Model):
 
     def get_absolute_url(self):
         return reverse('project_detail', kwargs={'slug': self.slug})
+
+
+class Language(models.Model):
+    STATUS = (
+        ('Yayında', 'Yayında'),
+        ('Yeni', 'Yeni'),
+        ('Kaldırıldı', 'Kaldırıldı'),
+    )
+    name = models.CharField(blank=True, max_length=250, verbose_name="Dil")
+    progress = models.IntegerField(blank=True, verbose_name="İlerleme", default=0)
+    numberofprojects = models.IntegerField(blank=True, verbose_name="Yapılan Proje Sayısı", default=0)
+    status = models.CharField(blank=True, choices=STATUS, default='Yeni', max_length=15)
+    created_date = models.DateTimeField(auto_now_add=True, verbose_name="Oluşturulma Tarihi")
+    updated_date = models.DateTimeField(auto_now=True, verbose_name="Güncellenme Tarihi")
+
+    def __str__(self):
+        return self.name

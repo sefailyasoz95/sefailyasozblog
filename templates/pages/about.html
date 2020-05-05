@@ -1,9 +1,5 @@
 {% extends 'homebase.html' %}
 
-{% block navbar %}
-    {% include "pages/navbar.html" %}
-{% endblock %}
-
 {% block content %}
 <div class="container">
     <div class="jumbotron text-center border-left border-right border-bottom border-danger ">
@@ -30,23 +26,15 @@
             </div>
         </div>
         <br>
-        <div class="progress">
-            <div class="progress-bar" style="width: 70%">
-                Python
+        {% for lang in languages %}
+
+            <div class="progress">
+                <div class="progress-bar w-{{ lang.progress }}">
+                    {{ lang.name }}
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="progress">
-            <div class="progress-bar" style="width: 70%">
-                Django
-            </div>
-        </div>
-        <br>
-        <div class="progress">
-            <div class="progress-bar bg-success" style="width: 10%">
-                JavaScript
-            </div>
-        </div>
+            <br>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

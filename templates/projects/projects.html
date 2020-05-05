@@ -1,0 +1,29 @@
+{% extends 'homebase.html' %}
+
+{% block content %}
+     <div class="container">
+            <div class="jumbotron text-center">
+               <h5 class="display-4">My Projects</h5>
+                <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum necessitatibus perspiciatis cum vitae, modi hic?</p>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quibusdam.</p>
+            </div>
+            <br>
+            <div class="card-columns mb-5">
+                {% for project in projects %}
+                    <div class="card text-white bg-dark">
+                        <div class="card-header">{{ project.title }}</div>
+                            <div class="card-body">
+                            <h5 class="card-title">{{ project.description }}</h5>
+                            <small class="text-muted pb-1">
+                                Last updated at: {{ project.updated_date }}
+                                <a class="btn btn-danger mt-2" href="{{ project.id }}">Read More</a>
+                            </small>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+     </div>
+{% endblock %}
+
+

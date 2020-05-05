@@ -1,6 +1,45 @@
-{% load static %}
 <div class="footer">
-    <navbar class="navbar-expand navbar-dark navbar">
-        selamın aleyküm footer kardeş
+    <navbar class="navbar-expand bg-dark p-5 navbar text-white">
+        <div class="col-md-4">
+            <div class="col-md-6" style="margin: auto">
+                    <button class="btn btn-dark d-block mb-2" data-toggle="collapse" data-target="#collapse-btn-1">Links</button>
+                    <div class="collapse" id="collapse-btn-1">
+                        <div class="card">
+                            <div class="card-body">
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="/projects">My Projects</a>
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="/blogs">My Blogs</a>
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="/aboutme">About Me</a>
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="/contact">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            Copyright &copy; {{ settings.title }} 2020
+        </div>
+        <div class="col-md-4">
+           <div class="col-md-7" style="margin-left: auto">
+                    <button class="btn btn-dark d-block mb-2" data-toggle="collapse" data-target="#collapse-btn-2">Social Media</button>
+                    <div class="collapse" id="collapse-btn-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="{{ settings.github }}">
+                                    <i class="fab fa-github"> </i> Github
+                                </a>
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="{{ settings.kariyer }}">
+                                    <i class="fab fa-linkedin"> </i> LinkedIn
+                                </a>
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="{{ settings.twitter }}">
+                                    <i class="fab fa-twitter"> </i> Twitter
+                                </a>
+                                <a class="list-group-item list-group-item-action list-group-item-dark" href="{{ settings.instagram }}">
+                                    <i class="fab fa-instagram-square"></i> Instagram
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
     </navbar>
 </div>

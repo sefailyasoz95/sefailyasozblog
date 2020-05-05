@@ -7,16 +7,19 @@ from django.shortcuts import render
 # Create your views here.
 from .forms import NewBlog
 from .models import Blog
+from pages.models import Setting
 
 
 def index(request):
     blogs = Blog.objects.filter(status='Yayında').order_by('-created_date')
-    context = {'blogs': blogs,}
+    settings = Setting.objects.get(pk=1)
+    context = {'blogs': blogs, 'settings': settings}
     return render(request, 'blogs/blogs.html', context)
 
 def detail(request,id):
     blogs = Blog.objects.get(pk=id)
-    context = {'blogs': blogs}
+    settings = Setting.objects.get(pk=1)
+    context = {'blogs': blogs,'settings': settings}
     return render(request, 'blogs/detail.html', context)
 
 def search(request):
